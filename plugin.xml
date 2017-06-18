@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-video-editor" version="1.1.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-video-editor" version="1.1.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>VideoEditor</name>
     <description>A plugin to assist in video editing tasks</description>
     <keywords>cordova,video,editing,transcoding,encoding</keywords>
@@ -30,8 +30,8 @@
         <!-- add plugin class -->
         <source-file src="src/android/VideoEditor.java" target-dir="src/org/apache/cordova/videoeditor" />
         <source-file src="src/android/CustomAndroidFormatStrategy.java" target-dir="src/org/apache/cordova/videoeditor" />
-
-        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <source-file src="src/android/android-transcoder.jar" target-dir="libs/" />
+        <!--<framework src="src/android/build.gradle" custom="true" type="gradleReference" />-->
 
     </platform>
 
@@ -39,7 +39,7 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="VideoEditor">
-                <param name="ios-package" value="VideoEditor"/>
+                <param name="ios-package" value="VideoEditor" />
             </feature>
         </config-file>
 
